@@ -1,0 +1,5 @@
+3. CSS Transitions and Animations
+Transition property: transition-duration, transition-timing-function, transition-delay
+Animations: @keyframes, animation property (duration, timing-function, delay, iteration-count, etc.)
+Animation events and timing functions
+=================================================================

@@ -1,0 +1,21 @@
+/* tag selctor */
+div
+{
+ font-style: italic;
+}
+
+#kishan-p1
+{
+    background-color: aqua;
+    font-style: normal;
+}
+.rohan-p1
+{
+    background-color: rgb(177, 105, 167);
+    font-style: normal;
+
+}
+.rohan-p2
+{
+    border: 1cap;
+}

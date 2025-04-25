@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tecresearch Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="tr-center-wrapper">
+    <div class="tr-button-container">
+      <button class="tr-button" onclick="loadLayout('layout1.html')">Load Layout 1</button>
+      <button class="tr-button" onclick="loadLayout('layout2.html')">Load Layout 2</button>
+      <button class="tr-button" onclick="loadLayout('layout3.html')">Load Layout 3</button>
+    </div>
+
+    <div id="layoutContainer" class="tr-layout-container">
+      <!-- layout1.html will be loaded here by default -->
+    </div>
+  </div>
+
+  <script>
+    function loadLayout(file) {
+      fetch(file)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('layoutContainer').innerHTML = html;
+          window.scrollTo({
+            top: document.getElementById('layoutContainer').offsetTop,
+            behavior: 'smooth'
+          });
+        })
+        .catch(err => {
+          document.getElementById('layoutContainer').innerHTML = "<p style='color:red;'>Error loading layout.</p>";
+          console.error(err);
+        });
+    }
+
+    // Load layout1.html by default on page load
+    window.onload = function () {
+      loadLayout('layout1.html');
+    }
+  </script>
+
+</body>
+
+</html>

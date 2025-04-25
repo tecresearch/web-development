@@ -1,0 +1,12 @@
+7.Advanced CSS Concepts (Optional)
+CSS Transforms: translate, scale, rotate, skew
+CSS Filters: blur, brightness, contrast, grayscale, invert, sepia, etc.
+Z-index and Stacking context
+CSS Shapes and Clipping
+Custom CSS animations for UI elements
+Writing maintainable and clean CSS
+Modular CSS (e.g., BEM, SMACSS)
+Avoiding !important in styles
+Optimizing CSS for performance
+SCSS
+===================================================================

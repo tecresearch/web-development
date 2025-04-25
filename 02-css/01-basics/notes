@@ -1,0 +1,301 @@
+1.1. Introduction to CSS
+What is CSS?
+What is CSS?
+Definition:
+CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. 
+It controls the layout, colors, fonts, and overall visual appearance of web pages.
+
+<p>This is a paragraph.</p>
+
+p {
+  color: blue;
+  font-size: 16px;
+}
+
+The Role of CSS in Web Development
+Definition:
+CSS separates content (HTML) from presentation (styling), making websites more maintainable, flexible, and visually appealing. It allows consistent styling across multiple pages.
+
+Example:
+Without CSS, HTML elements appear in default styles. CSS enhances them:
+
+<!-- Without CSS -->
+<h1>Heading</h1>  
+
+<!-- With CSS -->
+<h1 style="color: red; font-family: Arial;">Heading</h1>
+
+
+Inline, Internal, and External CSS
+
+Inline:
+<p style="color: green; font-size: 20px;">This is a styled paragraph.</p>
+=======================================
+2. Internal (Embedded) CSS
+<head>
+  <style>
+    p {
+      color: purple;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p>This paragraph is styled with internal CSS.</p>
+</body>
+Definition:
+CSS is written inside the <style> tag in the <head> section of an HTML document.
+====================================================================================
+External CSS:
+styles.css
+p {
+  color: orange;
+  text-align: center;
+}
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p>This paragraph is styled with external CSS.</p>
+</body>
+==========================================================
+CSS Syntax: Selectors, Properties, and Values
+Definition:
+CSS rules consist of:
+
+Selector: Targets HTML elements (e.g., p, .class, #id).
+
+Property: What to style (e.g., color, font-size).
+
+Value: How to style it (e.g., red, 20px).
+
+selector {
+  property: value;
+}
+
+h1 {
+  color: navy;
+  font-family: "Arial", sans-serif;
+}
+
+==========================
+
+CSS Selectors
+1. Tag Selector
+Definition: Selects HTML elements by their tag name.
+
+Example:
+p {
+  font-style: italic;
+}
+Styles all <p> elements.
+
+
+2. ID Selector (#id)
+Definition: Selects a unique element with a specific id attribute.
+
+Example:
+
+<div id="header">Welcome!</div>
+
+#header {
+  background-color: yellow;
+}
+Styles only the element with id="header".
+
+
+==========================================
+3. Class Selector (.class)
+Definition: Selects elements with a specific class attribute.
+
+Example:
+
+<p class="highlight">Important text</p>
+
+.highlight{
+  
+color:red;
+background-color: lightblue;
+
+}
+=============================================
+CSS Selectors:  *Attribute, Universal, Grouping
+ Attribute Selector ([attribute])
+Definition: Selects elements based on an attribute.
+
+<input type="text" placeholder="Name">
+
+
+input[type="text"] {
+  border: 1px solid gray;
+}
+
+Styles only <input> elements with type="text"
+
+5. Universal Selector (*)
+Definition: Selects all elements on the page.
+
+Example:
+
+* {
+  margin: 0;
+  padding: 0;
+color:red;
+}
+Removes default margin and padding from all elements.
+
+==============================================
+6. Grouping Selector
+Definition: Applies the same style to multiple selectors.
+
+Example:
+
+h1, h2, h3 {
+  color: darkgreen;
+  font-family: "Times New Roman";
+}
+==========================================================
+
+CSS Specificity
+
+Definition:
+Specificity determines which CSS rule is applied when multiple rules target the same element. The hierarchy is:
+
+Inline Styles (style="") – Highest priority
+
+ID Selectors (#id)
+
+Class/Attribute/Pseudo-class Selectors (.class, [type="text"], :hover)
+
+Tag Selectors (p, div)
+
+Universal Selector (*) – Lowest priority
+
+Example:
+
+<p id="intro" class="text">Hello World!</p>
+
+#intro {
+  color: red; /* Wins (higher specificity) */
+}
+.text {
+  color: blue;
+}
+p {
+  color: green;
+}
+*{
+color:pink;
+}
+
+
+
+Summary Table: Specificity Hierarchy
+Selector Type	Example	Specificity Value
+Inline Style	style="..."	1000
+ID Selector	#header	100
+Class/Attribute/Pseudo	.class	10
+Tag Selector	p	1
+Universal Selector	*	0
+===============================================================
+
+
+1.2. CSS Box Model
+
+The CSS Box Model is a fundamental concept that describes 
+how elements are structured and spaced in a web page. 
+
+Understanding the Box Model:
+Every HTML element is treated as a rectangular box consisting of four parts:
+
+Content – The actual text, image, or media inside the element.
+
+Padding – The space between the content and the border (transparent by default).
+
+Border – A line surrounding the padding (visible if styled).
+
+Margin – The outermost layer, creating space outside the border (transparent).
+
+Visual Representation:
+
++-------------------------------------+
+|               Margin                |
+|   +-----------------------------+   |
+|   |          Border             |   |
+|   |   +---------------------+   |   |
+|   |   |      Padding        |   |   |
+|   |   |   +-------------+   |   |   |
+|   |   |   |  Content    |   |   |   |
+|   |   |   +-------------+   |   |   |
+|   |   |                     |   |   |
+|   |   +---------------------+   |   |
+|   |                             |   |
+|   +-----------------------------+   |
+|                                     |
++-------------------------------------+
+=============================================================
+Box-sizing property: content-box vs border-box
+Width, Height, and Box dimensions
+
+Box Model Properties
+Property	        Description	                                Example
+width & height	        Sets the content area size.             	width: 200px; height: 100px;
+padding	                Space inside the border (around content).	padding: 10px; (all sides)
+border	                A visible line around padding.	                border: 2px solid black;
+margin	                Space outside the border.	                margin: 20px; (all sides)
+
+Example
+HTML
+<div class="box">This is a box.</div>
+
+CSS
+.box {
+  width: 200px;          /* Content width */
+  height: 100px;         /* Content height */
+  padding: 20px;         /* Space inside border */
+  border: 3px solid red; /* Visible border */
+  margin: 30px;          /* Space outside border */
+}
+
+Box-Sizing: Controlling the Box Model
+By default, width and height only define the content size, but box-sizing can change this behavior.
+
+1. content-box (Default)
+width & height = only content
+
+Padding & border add extra space.
+
+2. border-box (Recommended for Easier Layouts)
+width & height = content + padding + border
+
+More predictable sizing.
+
+Example
+.box {
+  box-sizing: border-box; /* Includes padding & border in width/height */
+  width: 200px;
+  padding: 20px;
+  border: 3px solid red;
+}
+
+Margin Collapsing
+When two vertical margins meet, they collapse into a single margin (the larger one wins).
+
+Example
+.box1 { margin-bottom: 30px; }
+.box2 { margin-top: 20px; }
+===============================================================
+1.3. Styling Text and Fonts
+Font-family, Font-size, Font-weight, Font-style, Text-transform
+Text-align, Text-decoration, Text-shadow, Letter-spacing
+Line-height, Word-spacing
+Web fonts (Google Fonts, etc.)
+CSS @font-face rule
+================================================================
+1.4. Colors and Backgrounds
+Color values: named colors, hex, RGB, RGBA, HSL, HSLA
+Background-color, Background-image, Background-repeat, Background-size, Background-position
+Gradients: Linear and Radial gradients
+Opacity and transparency
+================================================================

@@ -1,0 +1,4 @@
+5.CSS Pseudo-Classes and Pseudo-Elements
+Pseudo-classes: :hover, :active, :focus, :first-child, :last-child, :nth-child, :nth-of-type
+Pseudo-elements: ::before, ::after, ::first-letter, ::first-line
+=================================================================

@@ -1,0 +1,6 @@
+2. CSS Layout Techniques
+ a:Positioning: static, relative, absolute, fixed, and sticky
+ b:Flexbox: Flex container, Flex items, justify-content, align-items, flex-direction, flex-wrap, flex-grow, flex-shrink, and align-self
+ c:Grid: Grid container, grid items, grid-template-columns, grid-template-rows, grid-gap, grid-template-areas, auto placement
+ d:Float and Clear: Creating layouts using floats, clearing floats
+=================================================================
