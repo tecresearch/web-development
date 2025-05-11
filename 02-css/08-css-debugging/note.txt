@@ -1,5 +1,0 @@
-8. CSS Debugging and Browser Compatibility
-Using browser developer tools for debugging
-Cross-browser compatibility issues and solutions
-Vendor prefixes (e.g., -webkit-, -moz-)
-===================================================================

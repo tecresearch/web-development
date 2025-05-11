@@ -292,10 +292,264 @@ Text-align, Text-decoration, Text-shadow, Letter-spacing
 Line-height, Word-spacing
 Web fonts (Google Fonts, etc.)
 CSS @font-face rule
+
+=====================================================
+1. Font Styling Properties
+Font-family
+Defines the typeface used for the text.
+
+css
+Copy
+Edit
+p {
+  font-family: 'Arial', sans-serif;
+}
+Font-size
+Sets the size of the font.
+
+css
+Copy
+Edit
+h1 {
+  font-size: 24px;
+}
+Font-weight
+Controls the thickness of the text.
+
+css
+Copy
+Edit
+strong {
+  font-weight: bold; /* or 400, 700 */
+}
+Font-style
+Applies italic or oblique styling.
+
+css
+Copy
+Edit
+em {
+  font-style: italic;
+}
+Text-transform
+Transforms text to uppercase, lowercase, or capitalized.
+
+css
+Copy
+Edit
+.upper {
+  text-transform: uppercase;
+}
+2. Text Alignment and Decoration
+Text-align
+Aligns the text (left, right, center, justify).
+
+css
+Copy
+Edit
+div {
+  text-align: center;
+}
+Text-decoration
+Adds decoration to text (underline, overline, line-through, none).
+
+css
+Copy
+Edit
+a {
+  text-decoration: none;
+}
+Text-shadow
+Applies shadow to text.
+
+css
+Copy
+Edit
+h2 {
+  text-shadow: 2px 2px 5px gray;
+}
+3. Spacing and Line Control
+Letter-spacing
+Adjusts the space between letters.
+
+css
+Copy
+Edit
+p {
+  letter-spacing: 2px;
+}
+Line-height
+Controls the space between lines of text.
+
+css
+Copy
+Edit
+p {
+  line-height: 1.5;
+}
+Word-spacing
+Sets spacing between words.
+
+css
+Copy
+Edit
+p {
+  word-spacing: 5px;
+}
+4. Web Fonts (e.g., Google Fonts)
+Use Google Fonts by including a link in the HTML <head>:
+
+html
+Copy
+Edit
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+Then use it in CSS:
+
+css
+Copy
+Edit
+body {
+  font-family: 'Roboto', sans-serif;
+}
+5. CSS @font-face Rule
+Used to define custom fonts by loading font files.
+
+css
+Copy
+Edit
+@font-face {
+  font-family: 'MyFont';
+  src: url('fonts/MyFont.woff2') format('woff2'),
+       url('fonts/MyFont.woff') format('woff');
+}
+body {
+  font-family: 'MyFont', sans-serif;
+}
+
 ================================================================
 1.4. Colors and Backgrounds
 Color values: named colors, hex, RGB, RGBA, HSL, HSLA
 Background-color, Background-image, Background-repeat, Background-size, Background-position
 Gradients: Linear and Radial gradients
 Opacity and transparency
+===========================================
+1. Color Values
+Named Colors
+Use predefined color names.
+
+css
+
+h1 {
+  color: red;
+}
+Hexadecimal (#RRGGBB)
+Specify colors using hexadecimal values.
+
+css
+
+h1 {
+  color: #00ff00; /* Bright green */
+}
+RGB
+Red, Green, Blue values (0–255).
+
+css
+
+h1 {
+  color: rgb(255, 0, 0); /* Red */
+}
+RGBA
+RGB with Alpha (opacity: 0–1).
+
+css
+
+h1 {
+  color: rgba(0, 0, 255, 0.5); /* Semi-transparent blue */
+}
+HSL
+Hue (0–360), Saturation (%), Lightness (%).
+
+css
+
+h1 {
+  color: hsl(120, 100%, 50%); /* Green */
+}
+HSLA
+HSL with Alpha.
+
+css
+
+h1 {
+  color: hsla(120, 100%, 50%, 0.3); /* Transparent green */
+}
+2. Background Properties
+Background-color
+Sets background color.
+
+css
+
+div {
+  background-color: lightblue;
+}
+Background-image
+Adds an image as background.
+
+css
+
+div {
+  background-image: url('background.jpg');
+}
+Background-repeat
+Controls if and how background image repeats.
+
+css
+
+div {
+  background-repeat: no-repeat;
+}
+Background-size
+Defines background image size.
+
+css
+
+div {
+  background-size: cover; /* or contain, 100px 100px */
+}
+Background-position
+Positions background image.
+
+css
+
+div {
+  background-position: center center;
+}
+3. Gradients
+Linear Gradient
+css
+
+div {
+  background: linear-gradient(to right, red, yellow);
+}
+Radial Gradient
+css
+
+div {
+  background: radial-gradient(circle, red, yellow);
+}
+4. Opacity and Transparency
+Using opacity
+css
+
+div {
+  opacity: 0.5; /* 0 is fully transparent, 1 is fully opaque */
+}
+Using RGBA or HSLA for transparency
+Avoids affecting child elements’ opacity.
+
+css
+
+div {
+  background-color: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+}
+
 ================================================================
